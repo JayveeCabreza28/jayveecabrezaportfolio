@@ -146,7 +146,7 @@ body {
 }
 
 /* Floating background image */
-#about::before {
+#about {
   content: "";
   position: absolute;
   top: -50px;       /* adjust vertical position */
@@ -176,16 +176,16 @@ body {
 }
 
   
-#projects {
+#about, #projects {
   margin: auto;
   padding: 4rem 4rem;
 }
 
-#projects h2 {
+#about h2, #projects h2 {
   font-size: clamp(30px, 3vw, 44px);
 }
 
-#projects p {
+#about p, #projects p {
   font-size: clamp(15px, 1.2vw, 17px);
   line-height: 1.8;
   margin-bottom: 20px;
