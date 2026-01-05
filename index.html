@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Jayvee Cabreza portfolio Website</title>
+<title>Jayvee Cabreza Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
@@ -17,22 +17,21 @@
 
 body {
   background: #0f1419;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+  color: #fff;
 }
+
+/* ================= HERO SECTION ================= */
 
 .hero {
   width: 100%;
   max-width: 1700px;
   min-height: 90vh;
-  border-radius: 20px;
+  margin: 60px auto;
   padding: 60px;
   display: flex;
   gap: 50px;
+  border-radius: 20px;
   background: linear-gradient(120deg, #141414, #3b000f, #001a4d);
-  color: #fff;
 }
 
 .left {
@@ -54,7 +53,7 @@ body {
 .left p {
   margin-top: 10px;
   font-size: 20px;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .cards {
@@ -63,49 +62,38 @@ body {
   margin-top: 60px;
 }
 
-.card {
+/* ================= BUTTON CARDS ================= */
+
+.card-btn {
   width: 180px;
   height: 180px;
   border-radius: 15px;
   border: 1px dashed rgba(255,255,255,0.3);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  gap: 12px;
-  text-align: center;
-}
-
-.card span {
-  font-size: 18px;
-  opacity: 0.9;
-}
-
-.icons {
-  display: flex;
-  gap: 10px;
-}
-
-.icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  gap: 12px;
+  font-size: 18px;
   font-weight: 600;
+  transition: 0.3s ease;
 }
 
-.figma { background: #a259ff; }
-.ai { background: #ff9a00; }
-.ps { background: #31a8ff; }
+.card-btn:hover {
+  background: #800000;
+  transform: translateY(-5px);
+}
 
 .about-letter {
   font-size: 48px;
   font-weight: 800;
   color: red;
 }
+
+/* ================= RIGHT SIDE ================= */
 
 .right {
   flex: 1;
@@ -139,49 +127,60 @@ body {
 
 .profile-card img {
   width: 260px;
-  border-radius: 100%;
+  border-radius: 50%;
   z-index: 1;
 }
-.btn {
-    padding: 14px 32px;
-    font-size: 20px;
-    font-weight: 600;
-    color: #fff;
-    background-color: transparent;
-    border: 1px dashed rgba(255,255,255,0.3);
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+
+/* ================= ABOUT SECTION ================= */
+
+#about {
+  max-width: 1000px;
+  margin: 0 auto 80px;
+  padding: 4rem 2rem;
+}
+
+#about h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+#about p {
+  font-size: 16px;
+  line-height: 1.8;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+#about a {
+  color: #ff4d4d;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#about a:hover {
+  text-decoration: underline;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    background: #800000;
+  .cards {
+    justify-content: center;
+    flex-wrap: wrap;
   }
-
-  .btn:active {
-    transform: translateY(0);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  #about {
-    display: block;
-     padding: 3rem 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-  }
-.about p {
-      font-size: 1rem;
-      line-height: 1.8;
-    }
-  
+}
 </style>
 </head>
 
 <body>
 
+<!-- ================= HERO ================= -->
 <section class="hero">
-  
   <div class="left">
     <p>Hey 👋 I’m</p>
     <h1>JAYVEE CABREZA</h1>
@@ -189,23 +188,19 @@ body {
     <p>From Philippines</p>
 
     <div class="cards">
-
-      <div class="card">
-         <button class="card btn"> About
-        <div class="about-letter">A</div>
-         </button>
- </div>
-      
-     <button class="card btn"> Services
-          <div class="about-letter">S</div>
-     </button>
-      
-      <div class="card">
-        <button class="card btn"> Projects
-        <div class="about-letter">P</div>
+      <a href="#about">
+        <button class="card-btn">About
+          <div class="about-letter">A</div>
         </button>
-      </div>
+      </a>
 
+      <button class="card-btn">Services
+        <div class="about-letter">S</div>
+      </button>
+
+      <button class="card-btn">Projects
+        <div class="about-letter">P</div>
+      </button>
     </div>
   </div>
 
@@ -216,15 +211,27 @@ body {
   </div>
 </section>
 
-  <section id="about" class="about">
-    <h2>About Me</h2>
-  </br> <p>I’m Jayvee Ramiro Cabreza, a graphic and web designer based in Manila, Philippines, with over five years of experience bringing ideas to life through thoughtful design and clean digital solutions. I’ve worked with both local and international clients, crafting visuals that balance creativity, functionality, and brand identity.
-  </br> </br> Recently, I had the opportunity to work as a graphic designer in Dubai, UAE, where I adapted to global design standards, collaborated with a diverse creative team, and delivered impactful designs in a fast-paced environment. I’m passionate about creating work that not only looks good but communicates clearly and leaves a lasting impression.</p>
-    <p>Click here to download my resume:</p>
-    <a href = "https://github.com/JayveeCabreza28/jayveecabrezaportfolio/blob/main/Jayvee_CabrezaCV.pdf" download>Jayvee Cabreza Resume.pdf</a>
-  </section>
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <h2>About Me</h2>
 
-  
+  <p>
+    I’m Jayvee Ramiro Cabreza, a graphic and web designer based in Manila, Philippines,
+    with over five years of experience bringing ideas to life through thoughtful design
+    and clean digital solutions.
+  </p>
+
+  <p>
+    I’ve worked with both local and international clients, including professional
+    experience in Dubai, UAE, where I collaborated with diverse creative teams and
+    delivered impactful designs in fast-paced environments.
+  </p>
+
+  <p>Click here to download my resume:</p>
+  <a href="https://github.com/JayveeCabreza28/jayveecabrezaportfolio/blob/main/Jayvee_CabrezaCV.pdf" download>
+    Jayvee Cabreza Resume.pdf
+  </a>
+</section>
 
 </body>
 </html>
