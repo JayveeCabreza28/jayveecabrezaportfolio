@@ -140,40 +140,6 @@ body {
 }
 
 /* ================= ABOUT ================= */
-#about {
-  position: relative;
-  overflow: hidden; /* important to keep the background contained */
-}
-
-/* Floating background image */
-#about {
-  content: "";
-  position: absolute;
-  top: -50px;       /* adjust vertical position */
-  left: -50px;      /* adjust horizontal position */
-  width: 400px;     /* adjust size */
-  height: 400px;
-  background: url('ui-ux-design.png') no-repeat center center;
-  background-size: cover;
-  opacity: 0.15;    /* adjust opacity */
-  border-radius: 50%; /* optional for circular/floating effect */
-  filter: blur(80px); /* optional for soft glow */
-  z-index: -1;      /* keep it behind content */
-  animation: float 6s ease-in-out infinite alternate; /* optional float animation */
-}
-
-/* Optional floating animation */
-@keyframes float {
-  0% {
-    transform: translateY(0px) translateX(0px);
-  }
-  50% {
-    transform: translateY(-20px) translateX(15px);
-  }
-  100% {
-    transform: translateY(0px) translateX(0px);
-  }
-}
 
   
 #about, #projects {
