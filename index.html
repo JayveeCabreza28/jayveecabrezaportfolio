@@ -391,7 +391,7 @@ a {
 
  <section id="projects">
  <h2 style="border-bottom: 3px solid #fff; padding-bottom: 8px;">Projects (Sample Works)</h2>
- </br></br>
+ </br>
   <div class="projects-container">
     <div class="project-item" onclick="openImage(this)">
       <img src="Ber months campaign.png" alt="Project 1">
@@ -425,6 +425,25 @@ a {
   <span class="close-btn">&times;</span>
   <img id="modalImg">
 </div>
+
+  <script>
+function openImage(el) {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  modalImg.src = el.querySelector("img").src;
+  modal.style.display = "flex";
+}
+
+function closeImage() {
+  document.getElementById("imageModal").style.display = "none";
+}
+
+/* Close with ESC key */
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") closeImage();
+});
+</script>
+
 
 
 
