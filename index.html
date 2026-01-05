@@ -65,21 +65,28 @@
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
-    .portfolio-item {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-    .portfolio-item:hover {
-      transform: translateY(-5px);
-    }
-    .portfolio-item img {
-      width: 100%;
-      margin: auto;
-      display: block;
-    }
+   .portfolio-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+
+  /* center content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+}
+
+.portfolio-item img {
+  max-width: 100%;
+  height: auto;       /* keeps image height based on its own size */
+  display: block;
+}
     .portfolio-item h3 {
       font-size: 1.25rem;
       margin: 1rem;
