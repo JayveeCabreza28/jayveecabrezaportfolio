@@ -142,7 +142,27 @@ body {
   border-radius: 100%;
   z-index: 1;
 }
+.btn {
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
 
+  .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
  
 </style>
 </head>
@@ -159,6 +179,7 @@ body {
 
     <div class="cards">
      <div class="card">
+       <button class="btn">Click Me</button>
         <span>Services</span>
         <div class="icons">
           <div class="icon figma">F</div>
