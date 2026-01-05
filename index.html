@@ -210,15 +210,14 @@ a {
   text-decoration: underline;
   opacity: 0.9;
 }
-/* ===== PROJECTS SECTION ===== */
+/* ===== PROJECTS ===== */
 /* ===== FLEX GRID ===== */
 .projects-container {
   display: flex;
-  gap: 20px;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
-/* ===== PROJECT CARD ===== */
 .project-item {
   position: relative;
   flex: 1 1 calc(20% - 20px);
@@ -226,18 +225,16 @@ a {
   height: 220px;
   border-radius: 14px;
   overflow: hidden;
+  cursor: pointer;
   background: rgba(255,255,255,0.08);
   transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-/* Hover lift */
 .project-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.45),
-              0 0 0 1px rgba(255,77,77,0.5);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
 }
 
-/* Image */
 .project-item img {
   width: 100%;
   height: 100%;
@@ -245,7 +242,6 @@ a {
   transition: transform 0.5s ease;
 }
 
-/* Image zoom */
 .project-item:hover img {
   transform: scale(1.08);
 }
@@ -272,6 +268,46 @@ a {
   opacity: 1;
 }
 
+/* ===== FULLSCREEN MODAL ===== */
+#imageModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+#imageModal img {
+  max-width: 95%;
+  max-height: 95%;
+  border-radius: 10px;
+  animation: zoomIn 0.35s ease;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Animation */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 1200px) {
   .project-item {
@@ -294,6 +330,7 @@ a {
     height: 200px;
   }
 }
+
 
 </style>
 </head>
@@ -352,35 +389,43 @@ a {
   </p>
 </section>
 
-  <section id="projects">
-   <h2 style="border-bottom: 3px solid #fff; padding-bottom: 8px;">Projects (Sample Works)</h2>
+ <section id="projects">
+ <h2 style="border-bottom: 3px solid #fff; padding-bottom: 8px;">Projects (Sample Works)</h2>
 
   <div class="projects-container">
-    <div class="project-item">
-      <img src="Ber months campaign.png" alt="Project 1">
-      <div class="project-overlay"><span>View Project</span></div>
+    <div class="project-item" onclick="openImage(this)">
+      <img src="project1.jpg" alt="Project 1">
+      <div class="project-overlay"><span>View</span></div>
     </div>
 
-    <div class="project-item">
+    <div class="project-item" onclick="openImage(this)">
       <img src="project2.jpg" alt="Project 2">
+      <div class="project-overlay"><span>View</span></div>
     </div>
 
-    <div class="project-item">
+    <div class="project-item" onclick="openImage(this)">
       <img src="project3.jpg" alt="Project 3">
-      <div class="project-overlay"><span>View Project</span></div>
+      <div class="project-overlay"><span>View</span></div>
     </div>
 
-    <div class="project-item">
+    <div class="project-item" onclick="openImage(this)">
       <img src="project4.jpg" alt="Project 4">
-      <div class="project-overlay"><span>View Project</span></div>
+      <div class="project-overlay"><span>View</span></div>
     </div>
 
-    <div class="project-item">
+    <div class="project-item" onclick="openImage(this)">
       <img src="project5.jpg" alt="Project 5">
-      <div class="project-overlay"><span>View Project</span></div>
+      <div class="project-overlay"><span>View</span></div>
     </div>
   </div>
 </section>
+
+<!-- FULLSCREEN MODAL -->
+<div id="imageModal" onclick="closeImage()">
+  <span class="close-btn">&times;</span>
+  <img id="modalImg">
+</div>
+
 
 
 </body>
