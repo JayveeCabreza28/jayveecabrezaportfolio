@@ -23,11 +23,12 @@ body {
 /* ================= HERO ================= */
 .hero {
   width: 95%;
+  max-width: 1700px; /* supports 1920 screens */
   min-height: 90vh;
   margin: 20px auto;
-  padding: 40px;
+  padding: 50px;
   display: flex;
-  gap: 50px;
+  gap: 60px;
   border-radius: 20px;
   background: linear-gradient(120deg, #141414, #3b000f, #001a4d);
 }
@@ -37,18 +38,18 @@ body {
 }
 
 .left h1 {
-  font-size: clamp(32px, 5vw, 64px);
+  font-size: clamp(40px, 4vw, 72px);
   font-weight: 800;
 }
 
 .left h2 {
-  font-size: clamp(24px, 4vw, 36px);
+  font-size: clamp(26px, 2.5vw, 40px);
   margin-top: 10px;
 }
 
 .left p {
   margin-top: 10px;
-  font-size: clamp(14px, 2vw, 20px);
+  font-size: clamp(16px, 1.5vw, 22px);
   opacity: 0.85;
 }
 
@@ -56,39 +57,40 @@ body {
 .cards {
   display: flex;
   flex-direction: row;
-  gap: 24px;
-  margin-top: 40px;
+  gap: clamp(20px, 2vw, 40px);
+  margin-top: 60px;
 }
 
 /* ================= BUTTONS ================= */
 .card-btn {
-  display: flex;                 /* ✅ FIX */
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  width: clamp(180px, 25vw, 420px);
-  height: clamp(140px, 18vw, 180px);
+  /* responsive until 1920 */
+  width: clamp(220px, 20vw, 420px);
+  height: clamp(160px, 18vw, 220px);
 
-  border-radius: 16px;
-  border: 1px dashed rgba(255,255,255,0.3);
+  border-radius: 18px;
+  border: 1px dashed rgba(255,255,255,0.35);
   background: transparent;
   color: #fff;
   cursor: pointer;
 
-  gap: 12px;
-  font-size: clamp(14px, 1.2vw, 18px);
+  gap: 14px;
+  font-size: clamp(16px, 1.1vw, 20px);
   font-weight: 600;
   transition: all 0.3s ease;
 }
 
 .card-btn:hover {
   background: #800000;
-  transform: translateY(-4px);
+  transform: translateY(-6px);
 }
 
 .about-letter {
-  font-size: clamp(28px, 4vw, 48px);
+  font-size: clamp(36px, 3.5vw, 56px);
   font-weight: 800;
   color: red;
 }
@@ -102,10 +104,10 @@ body {
 }
 
 .profile-card {
-  width: clamp(250px, 25vw, 360px);
-  height: clamp(320px, 35vw, 460px);
+  width: clamp(280px, 22vw, 400px);
+  height: clamp(360px, 28vw, 520px);
   background: rgba(255,255,255,0.08);
-  border-radius: 20px;
+  border-radius: 22px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -115,17 +117,17 @@ body {
 .profile-card::before {
   content: "";
   position: absolute;
-  width: clamp(200px, 20vw, 280px);
-  height: clamp(200px, 20vw, 280px);
+  width: clamp(220px, 18vw, 320px);
+  height: clamp(220px, 18vw, 320px);
   border: 6px solid #800000;
   border-radius: 50%;
-  right: -10%;
-  bottom: 10%;
+  right: -12%;
+  bottom: 12%;
   opacity: 0.8;
 }
 
 .profile-card img {
-  width: clamp(180px, 25vw, 260px);
+  width: clamp(200px, 20vw, 300px);
   border-radius: 50%;
   z-index: 1;
 }
@@ -133,60 +135,61 @@ body {
 /* ================= ABOUT ================= */
 #about {
   max-width: 1200px;
-  margin: 0 auto 60px;
+  margin: 0 auto 80px;
   padding: 4rem 2rem;
 }
 
 #about h2 {
-  font-size: clamp(28px, 5vw, 42px);
+  font-size: clamp(30px, 3vw, 44px);
 }
 
 #about p {
-  font-size: clamp(14px, 2vw, 16px);
+  font-size: clamp(15px, 1.2vw, 17px);
   line-height: 1.8;
   margin-bottom: 20px;
 }
 
 /* ================= RESPONSIVE ================= */
 
-/* 🔹 Up to 1020px (tablet & small laptop) */
+/* 🔹 Tablet & below */
 @media (max-width: 1020px) {
   .hero {
     flex-direction: column;
     text-align: center;
+    padding: 40px;
   }
 
   .cards {
-    flex-direction: column;     /* ✅ COLUMN MODE */
+    flex-direction: column;
     align-items: center;
   }
 
   .card-btn {
     width: 90%;
     max-width: 420px;
-    height: 120px;
+    height: 140px;
   }
 }
 
 /* 🔹 Mobile */
 @media (max-width: 600px) {
   .hero {
-    padding: 20px;
+    padding: 25px;
   }
 
   .card-btn {
     width: 100%;
-    height: 110px;
+    height: 120px;
   }
 
   .profile-card {
-    width: 220px;
-    height: 300px;
+    width: 240px;
+    height: 320px;
   }
 
   .profile-card::before {
-    width: 160px;
-    height: 160px;
+    width: 170px;
+    height: 170px;
   }
 }
 </style>
@@ -227,21 +230,13 @@ body {
 <!-- ================= ABOUT ================= -->
 <section id="about">
   <h2>About Me</h2>
-
   <p>
     I’m Jayvee Ramiro Cabreza, a graphic and web designer based in Manila, Philippines,
     with over five years of experience bringing ideas to life through thoughtful design.
   </p>
-
   <p>
-    I’ve worked with both local and international clients and professional teams in
-    Dubai, UAE.
+    I’ve worked with both local and international clients and creative teams in Dubai, UAE.
   </p>
-
-  <p>Click here to download my resume:</p>
-  <a href="https://github.com/JayveeCabreza28/jayveecabrezaportfolio/blob/main/Jayvee_CabrezaCV.pdf" download>
-    Jayvee Cabreza Resume.pdf
-  </a>
 </section>
 
 </body>
