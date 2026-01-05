@@ -210,6 +210,114 @@ a {
   text-decoration: underline;
   opacity: 0.9;
 }
+/* ===== PROJECTS SECTION ===== */
+#projects {
+  max-width: 1400px;
+  margin: 0 auto 80px;
+  padding: 3rem 2rem;
+}
+
+.section-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 70px;
+  height: 4px;
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+/* ===== FLEX GRID ===== */
+.projects-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ===== PROJECT CARD ===== */
+.project-item {
+  position: relative;
+  flex: 1 1 calc(20% - 20px);
+  max-width: calc(20% - 20px);
+  height: 220px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover lift */
+.project-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45),
+              0 0 0 1px rgba(255,77,77,0.5);
+}
+
+/* Image */
+.project-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/* Image zoom */
+.project-item:hover img {
+  transform: scale(1.08);
+}
+
+/* Overlay */
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.project-overlay span {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.project-item:hover .project-overlay {
+  opacity: 1;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .project-item {
+    flex: 1 1 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .project-item {
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .project-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+    height: 200px;
+  }
+}
 
 </style>
 </head>
@@ -269,10 +377,36 @@ a {
 </section>
 
   <section id="projects">
-  <h2 style="border-bottom: 3px solid #fff; padding-bottom: 8px;">
-  Projects (Sample works) </h2>
-  </p>
+  <h2 class="section-title">Projects (Sample Works)</h2>
+
+  <div class="projects-container">
+    <div class="project-item">
+      <img src="project1.jpg" alt="Project 1">
+      <div class="project-overlay"><span>View Project</span></div>
+    </div>
+
+    <div class="project-item">
+      <img src="project2.jpg" alt="Project 2">
+      <div class="project-overlay"><span>View Project</span></div>
+    </div>
+
+    <div class="project-item">
+      <img src="project3.jpg" alt="Project 3">
+      <div class="project-overlay"><span>View Project</span></div>
+    </div>
+
+    <div class="project-item">
+      <img src="project4.jpg" alt="Project 4">
+      <div class="project-overlay"><span>View Project</span></div>
+    </div>
+
+    <div class="project-item">
+      <img src="project5.jpg" alt="Project 5">
+      <div class="project-overlay"><span>View Project</span></div>
+    </div>
+  </div>
 </section>
+
 
 </body>
 </html>
