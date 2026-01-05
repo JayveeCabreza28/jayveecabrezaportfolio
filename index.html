@@ -142,6 +142,145 @@ body {
   border-radius: 10px;
   z-index: 1;
 }
+ header {
+      background: linear-gradient(135deg, #800000, #8D070E, #9B0D1C, #A8142A, #B61A38, #C32146);
+      color: #fff;
+      padding: 4rem 1rem 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+    nav {
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #800000;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #800000;
+    }
+    .about p {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+   .portfolio-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+
+  /* center content */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-5px);
+}
+
+.portfolio-item img {
+  max-width: 100%;
+  height: auto;       /* keeps image height based on its own size */
+  display: block;
+}
+    .portfolio-item h3 {
+      font-size: 1.25rem;
+      margin: 1rem;
+      color: #007BFF;
+    }
+    .portfolio-item p {
+      font-size: 0.95rem;
+      margin: 0 1rem 1rem;
+    }
+    .contact-info p {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+    footer {
+      text-align: center;
+      background: linear-gradient(135deg, #800000, #8D070E, #9B0D1C, #A8142A, #B61A38, #C32146);
+      color: #fff;
+      padding: 1.5rem 1rem;
+      margin-top: 2rem;
+      font-size: 0.95rem;
+    }
+  .profile {
+      width:20%;
+      border-radius:100%;
+}
+    .vid {
+      width: 100%;
+      height: 100%;
+      
+    }
+.contact-form {
+      max-width: 100%;
+      margin: 50px auto;
+      background: #F4E5E8;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .contact-form h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .contact-form button {
+      width: 100%;
+      padding: 10px;
+      background: #800000;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .contact-form button:hover {
+      background-color: #5C0000;
+    }
+    .divider {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin: 30px 0;
+}
+  
 </style>
 </head>
 
@@ -151,9 +290,9 @@ body {
 
   <div class="left">
     <p>Hey 👋 I’m</p>
-    <h1>MOHID</h1>
+    <h1>JAYVEE CABREZA</h1>
     <h2>UI/UX Designer</h2>
-    <p>From Pakistan</p>
+    <p>From Philippines</p>
 
     <div class="cards">
       <div class="card">
@@ -179,12 +318,113 @@ body {
 
   <div class="right">
     <div class="profile-card">
-      <!-- Replace image src with your own -->
-      <img src="https://via.placeholder.com/260x360" alt="Profile">
+      <img src="profile_pic.png" alt="Profile">
     </div>
   </div>
 
 </section>
+ <header>
+    <h1>Jayvee Ramiro Cabreza</h1>
+    <p>Website & Graphic Designer</p>
+  </header>
+
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#portfolio">Sample works</a>
+    <a href="#contact">Contact Me</a>
+  </nav>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <img src="profile_pic.png" class="profile" alt="Avatar">
+  </br> <p>I’m Jayvee Ramiro Cabreza, a graphic and web designer based in Manila, Philippines, with over five years of experience bringing ideas to life through thoughtful design and clean digital solutions. I’ve worked with both local and international clients, crafting visuals that balance creativity, functionality, and brand identity.
+  </br> </br> Recently, I had the opportunity to work as a graphic designer in Dubai, UAE, where I adapted to global design standards, collaborated with a diverse creative team, and delivered impactful designs in a fast-paced environment. I’m passionate about creating work that not only looks good but communicates clearly and leaves a lasting impression.</p>
+    <p>Click here to download my resume:</p>
+    <a href = "https://github.com/JayveeCabreza28/jayveecabrezaportfolio/blob/main/Jayvee_CabrezaCV.pdf" download>Jayvee Cabreza Resume.pdf</a>
+  </section>
+
+  <section id="portfolio">
+    <h2>Portfolio (Sample works)</h2>
+    <div class="portfolio">
+       <div class="portfolio-item">
+        <img src="Ber months campaign.png" alt="Portfolio item 10">
+      </div>
+      <div class="portfolio-item">
+        <img src="Fun and Light.png" alt="Portfolio item 11">
+      </div>
+       <div class="portfolio-item">
+        <img src="Rustic And Clean.png" alt="Portfolio item 12">
+      </div>
+      <div class="portfolio-item">
+        <img src="FB Cover Photo.png" alt="Portfolio item 13">
+      </div>
+      <div class="portfolio-item">
+        <img src="Coffee Kiosk.png" alt="Portfolio item 14">
+      </div>
+      <div class="portfolio-item">
+        <img src="Cash Voucher.png" alt="Portfolio item 15">
+      </div>
+      <div class="portfolio-item">
+        <img src="Milk tea kiosk.png" alt="Portfolio item 15">
+      </div>
+      <div class="portfolio-item">
+        <img src="IMG_1162.jpeg" alt="Portfolio item 1">
+      </div>
+      <div class="portfolio-item">
+        <img src="IMG_1166.jpeg" alt="Portfolio item 2">
+      </div>
+      <div class="portfolio-item">
+        <img src="IMG_1167.jpeg" alt="Portfolio item 3">
+      </div>
+       <div class="portfolio-item">
+        <img src="IMG_1163.jpeg" alt="Portfolio item 4">
+      </div>
+       <div class="portfolio-item">
+        <img src="IMG_1164.jpeg" alt="Portfolio item 5">
+      </div>
+       <div class="portfolio-item">
+        <img src="IMG_1165.jpeg" alt="Portfolio item 6">
+      </div>
+       <div class="portfolio-item">
+        <img src="Coffee_Assessment.png" alt="Portfolio item 7">
+      </div>
+      <div class="portfolio-item">
+        <img src="Coffee2.png" alt="Portfolio item 8">
+      </div>
+       <div class="portfolio-item">
+        <img src="Shinigawa_assessment.png" alt="Portfolio item 9">
+      </div>
+      <video class="portfolio-item vid" controls>
+  <source src="Shinagawa Video ads Assesment.mp4" type="video/mp4" alt="Video 1">
+Your browser does not support the video tag.
+</video>
+     
+    </div>
+  </section>
+<hr class="divider">
+  
+  <section id="contact" class="contact">
+    <div class="contact-info">
+      <form class="contact-form"
+        action="mailto:jayveecabreza28@gmail.com"
+        method="post"
+        enctype="text/plain">
+
+    <h2>Get in Touch with me!</h2>
+
+    <input type="text" name="Name" placeholder="Your Name" required>
+    <input type="email" name="Email" placeholder="Your Email" required>
+    <textarea name="Message" rows="5" placeholder="Your Message" required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Jayvee Ramiro Cabreza. All rights reserved.</p>
+  </footer>
+  
 
 </body>
 </html>
