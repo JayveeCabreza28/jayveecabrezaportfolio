@@ -334,6 +334,36 @@ a {
     height: 200px;
   }
 }
+#about {
+  position: relative;
+  padding: 80px 40px;
+  color: #fff;
+  background: url("ui-ux-design.png") center/cover no-repeat;
+  overflow: hidden;
+}
+
+/* Overlay */
+#about .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* adjust opacity here */
+  z-index: 1;
+}
+
+/* Content stays above overlay */
+#about h2,
+#about p,
+#about a {
+  position: relative;
+  z-index: 2;
+}
+
+/* Heading style */
+#about h2 {
+  border-bottom: 3px solid #fff;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
 
 
 </style>
@@ -380,19 +410,24 @@ a {
 </section>
 
 <section id="about">
-  <img src="ui-ux-design.png" alt="about_bg">
-   <h2 style="border-bottom: 3px solid #fff; padding-bottom: 8px;">
-  About Me </h2>
-  <p>
-   </br> <p>I’m Jayvee Ramiro Cabreza, a graphic and web designer based in Manila, Philippines, with over five years of experience bringing ideas to life through thoughtful design and clean digital solutions. I’ve worked with both local and international clients, crafting visuals that balance creativity, functionality, and brand identity.
-  </br> </br> Recently, I had the opportunity to work as a graphic designer in Dubai, UAE, where I adapted to global design standards, collaborated with a diverse creative team, and delivered impactful designs in a fast-paced environment. I’m passionate about creating work that not only looks good but communicates clearly and leaves a lasting impression.</p>
-    <p>Click here to download my resume:</p>
-  <a href="https://github.com/JayveeCabreza28/jayveecabrezaportfolio/blob/main/Jayvee_CabrezaCV.pdf"
-   class="resume-link" download>
-  Jayvee Cabreza Resume.pdf </a>
+  <div class="overlay"></div>
 
+  <h2>About Me</h2>
+
+  <p>
+    I’m Jayvee Ramiro Cabreza, a graphic and web designer based in Manila, Philippines, with over five years of experience bringing ideas to life through thoughtful design and clean digital solutions. I’ve worked with both local and international clients, crafting visuals that balance creativity, functionality, and brand identity.
+    <br><br>
+    Recently, I had the opportunity to work as a graphic designer in Dubai, UAE, where I adapted to global design standards, collaborated with a diverse creative team, and delivered impactful designs in a fast-paced environment. I’m passionate about creating work that not only looks good but communicates clearly and leaves a lasting impression.
   </p>
+
+  <p>Click here to download my resume:</p>
+
+  <a href="https://github.com/JayveeCabreza28/jayveecabrezaportfolio/blob/main/Jayvee_CabrezaCV.pdf"
+     class="resume-link" download>
+     Jayvee Cabreza Resume.pdf
+  </a>
 </section>
+
 
  <section id="projects">
  <h2 style="border-bottom: 3px solid #fff; padding-bottom: 8px;">Projects (Sample Works)</h2>
