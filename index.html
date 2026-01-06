@@ -336,24 +336,40 @@ a {
 }
 #about {
   position: relative;
-  padding: 80px 40px 200px 40px; /* extra bottom padding for the overflowing image */
+  padding: 80px 20px 200px 20px; /* extra bottom padding for the overflowing image */
   color: #fff;
-  background-color: #000; /* or whatever background you want */
+  background-color: #000; /* section background */
   text-align: center;
-  overflow: visible; /* allow overflow */
+  overflow: visible; /* allow image to overflow */
 }
 
-/* Image that overflows the text */
+/* Overflowing image */
 #about img {
   position: absolute;
-  bottom: -50px; /* how much it overlaps the section */
-  left: 50%;      /* center horizontally */
-  transform: translateX(-50%); /* perfect centering */
-  width: 350px;  /* adjust size */
+  bottom: -10%;      /* overflow below section */
+  left: 50%;         /* center horizontally */
+  transform: translateX(-50%);
+  width: 25%;        /* responsive size */
+  max-width: 200px;  /* optional max size */
   height: auto;
-  opacity: 30%;
-  z-index: 1;    /* above background but below section content if needed */
+  z-index: 1;
 }
+
+/* Smaller screens */
+@media (max-width: 768px) {
+  #about img {
+    width: 40%;       /* larger relative to screen for small devices */
+    bottom: -15%;
+  }
+}
+
+@media (max-width: 480px) {
+  #about img {
+    width: 60%;
+    bottom: -20%;
+  }
+}
+
 
 
 
