@@ -336,19 +336,24 @@ a {
 }
 #about {
   position: relative;
-  padding: 80px 40px;
+  padding: 80px 40px 200px 40px; /* extra bottom padding for the overflowing image */
   color: #fff;
-  background-color: #000; /* keep background color if needed */
-  text-align: center;      /* center text and image */
+  background-color: #000; /* or whatever background you want */
+  text-align: center;
+  overflow: visible; /* allow overflow */
 }
 
-/* Image below the section content */
+/* Image that overflows the text */
 #about img {
-  display: block;
-  margin: 20px auto 0; /* 20px top margin, auto horizontal to center */
-  width: 150px;        /* smaller size, adjust as needed */
+  position: absolute;
+  bottom: -50px; /* how much it overlaps the section */
+  left: 50%;      /* center horizontally */
+  transform: translateX(-50%); /* perfect centering */
+  width: 300px;  /* adjust size */
   height: auto;
+  z-index: 1;    /* above background but below section content if needed */
 }
+
 
 
 
