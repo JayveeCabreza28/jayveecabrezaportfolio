@@ -338,33 +338,18 @@ a {
   position: relative;
   padding: 80px 40px;
   color: #fff;
-  background: url("ui-ux-design.png") left center no-repeat; /* move image to left */
-  background-size: 300px; /* smaller size */
-  overflow: hidden;
+  background-color: #000; /* keep background color if needed */
+  text-align: center;      /* center text and image */
 }
 
-/* Overlay */
-#about .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6); /* adjust opacity here */
-  z-index: 1;
+/* Image below the section content */
+#about img {
+  display: block;
+  margin: 20px auto 0; /* 20px top margin, auto horizontal to center */
+  width: 150px;        /* smaller size, adjust as needed */
+  height: auto;
 }
 
-/* Content stays above overlay */
-#about h2,
-#about p,
-#about a {
-  position: relative;
-  z-index: 2;
-}
-
-/* Heading style */
-#about h2 {
-  border-bottom: 3px solid #fff;
-  padding-bottom: 8px;
-  margin-bottom: 20px;
-}
 
 
 </style>
@@ -411,10 +396,7 @@ a {
 </section>
 
 <section id="about">
-  <div class="overlay"></div>
-
   <h2>About Me</h2>
-
   <p>
     I’m Jayvee Ramiro Cabreza, a graphic and web designer based in Manila, Philippines, with over five years of experience bringing ideas to life through thoughtful design and clean digital solutions. I’ve worked with both local and international clients, crafting visuals that balance creativity, functionality, and brand identity.
     <br><br>
@@ -427,6 +409,8 @@ a {
      class="resume-link" download>
      Jayvee Cabreza Resume.pdf
   </a>
+
+ <img src="ui-ux-design.png" alt="UI/UX Design">
 </section>
 
 
