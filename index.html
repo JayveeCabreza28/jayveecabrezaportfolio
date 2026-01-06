@@ -334,45 +334,6 @@ a {
     height: 200px;
   }
 }
-#about {
-  position: relative;
-  padding: 80px 20px 200px 20px; /* extra bottom padding for the overflowing image */
-  color: #fff;
-  background-color: #000; /* section background */
-  text-align: center;
-  overflow: visible; /* allow image to overflow */
-}
-
-/* Overflowing image */
-#about img {
-  position: absolute;
-  bottom: -10%;      /* overflow below section */
-  left: 50%;         /* center horizontally */
-  transform: translateX(-50%);
-  width: 25%;        /* responsive size */
-  max-width: 200px;  /* optional max size */
-  height: auto;
-  z-index: 1;
-}
-
-/* Smaller screens */
-@media (max-width: 768px) {
-  #about img {
-    width: 40%;       /* larger relative to screen for small devices */
-    bottom: -15%;
-  }
-}
-
-@media (max-width: 480px) {
-  #about img {
-    width: 60%;
-    bottom: -20%;
-  }
-}
-
-
-
-
 
 </style>
 </head>
@@ -431,8 +392,6 @@ a {
      class="resume-link" download>
      Jayvee Cabreza Resume.pdf
   </a>
-
- <img src="ui-ux-design.png" alt="UI/UX Design">
 </section>
 
 
