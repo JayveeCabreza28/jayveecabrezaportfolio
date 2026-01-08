@@ -569,39 +569,31 @@ document.addEventListener("keydown", function(e) {
   <h2 style="border-bottom: 3px solid #fff; padding-bottom: 8px;">
   Contact Me </h2>
 
-   <form action="send.php" method="post">
-  <div class="input-group">
-    <input type="text" name="name" required>
-    <label>Name</label>
-  </div>
-
-  <div class="input-group">
-    <input type="email" name="email" required>
-    <label>Email</label>
-  </div>
-
-  <div class="input-group">
-    <textarea name="message" rows="4" required></textarea>
-    <label>Message</label>
-  </div>
-
-  <button type="submit">Send Message</button>
+   <form id="contact-form">
+  <input type="text" name="name" required>
+  <input type="email" name="email" required>
+  <textarea name="message" required></textarea>
+  <button type="submit">Send</button>
 </form>
 
-   <?php
-$to = "jayveecabreza28@gmail.com";
-$subject = "New Contact Form Message";
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("YOUR_PUBLIC_KEY");
 
-$name = $_POST['name'];
-$email = $_POST['email'];
-$message = $_POST['message'];
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-$headers = "From: $email";
-
-mail($to, $subject, $message, $headers);
-
-echo "Message sent successfully!";
-?>
+    emailjs.sendForm(
+      "YOUR_SERVICE_ID",
+      "YOUR_TEMPLATE_ID",
+      this
+    ).then(() => {
+      alert("Message sent!");
+    }, () => {
+      alert("Failed to send");
+    });
+  });
+</script>
   
 </section>
 
