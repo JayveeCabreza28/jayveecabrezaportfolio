@@ -569,25 +569,39 @@ document.addEventListener("keydown", function(e) {
   <h2 style="border-bottom: 3px solid #fff; padding-bottom: 8px;">
   Contact Me </h2>
 
-   <form>
-      <div class="input-group">
-        <input type="text" required>
-        <label>Name</label>
-      </div>
+   <form action="send.php" method="post">
+  <div class="input-group">
+    <input type="text" name="name" required>
+    <label>Name</label>
+  </div>
 
-      <div class="input-group">
-        <input type="email" required>
-        <label>Email</label>
-      </div>
+  <div class="input-group">
+    <input type="email" name="email" required>
+    <label>Email</label>
+  </div>
 
-      <div class="input-group">
-        <textarea rows="4" required></textarea>
-        <label>Message</label>
-      </div>
+  <div class="input-group">
+    <textarea name="message" rows="4" required></textarea>
+    <label>Message</label>
+  </div>
 
-      <button type="submit">Send Message</button>
-    </form>
-   
+  <button type="submit">Send Message</button>
+</form>
+
+   <?php
+$to = "jayveecabreza28@gmail.com";
+$subject = "New Contact Form Message";
+
+$name = $_POST['name'];
+$email = $_POST['email'];
+$message = $_POST['message'];
+
+$headers = "From: $email";
+
+mail($to, $subject, $message, $headers);
+
+echo "Message sent successfully!";
+?>
   
 </section>
 
