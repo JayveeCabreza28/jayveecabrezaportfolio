@@ -336,58 +336,32 @@ a {
 }
 .input-group {
   position: relative;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .input-group input,
 .input-group textarea {
   width: 100%;
-  padding: 10px 10px;
-  border: none;
-  border-bottom: 2px solid #ccc;
-  outline: none;
-  font-size: 16px;
-  resize: none;
+  padding: 10px;
+  background: transparent;
 }
 
 .input-group label {
   position: absolute;
+  top: 50%;
   left: 10px;
-  top: 10px;
-  color: #888;
-  pointer-events: none;
+  transform: translateY(-50%);
   transition: 0.3s;
 }
 
 .input-group input:focus ~ label,
-.input-group input:valid ~ label,
+.input-group input:not(:placeholder-shown) ~ label,
 .input-group textarea:focus ~ label,
-.input-group textarea:valid ~ label {
-  top: -10px;
-  font-size: 13px;
-  color: #667eea;
+.input-group textarea:not(:placeholder-shown) ~ label {
+  top: -8px;
+  font-size: 12px;
 }
 
-.input-group input:focus,
-.input-group textarea:focus {
-  border-bottom-color: #667eea;
-}
-
-button {
-  width: 100%;
-  padding: 12px;
-  background: #800000;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #2D0303;
-}
 </style>
 </head>
 
@@ -569,11 +543,25 @@ document.addEventListener("keydown", function(e) {
   <h2 style="border-bottom: 3px solid #fff; padding-bottom: 8px;">
   Contact Me </h2>
 
-   <form id="contact-form">
-  <input type="text" name="name" required>
-  <input type="email" name="email" required>
-  <textarea name="message" required></textarea>
-  <button type="submit">Send</button>
+  <form id="contact-form">
+
+  <div class="input-group">
+    <input type="text" name="name" required placeholder=" ">
+    <label>Name</label>
+  </div>
+
+  <div class="input-group">
+    <input type="email" name="email" required placeholder=" ">
+    <label>Email</label>
+  </div>
+
+  <div class="input-group">
+    <textarea name="message" rows="4" required placeholder=" "></textarea>
+    <label>Message</label>
+  </div>
+
+  <button type="submit">Send Message</button>
+
 </form>
 
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
